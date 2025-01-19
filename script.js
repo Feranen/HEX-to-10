@@ -4,6 +4,13 @@ const resultLabel = document.getElementById('test');
 
 function calculate(){
     let numbers = document.getElementById("input").value
+
+    const hexRegex = /^[0-9A-Fa-f]+$/;
+    if (!hexRegex.test(numbers)) {
+        resultDisplay.textContent = "Musi być tylko liczba szesnastkowa.";
+        return;
+    }
+
     array = numbers.split('')
 
     let updatedArray = array.map(char => {
